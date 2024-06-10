@@ -5,8 +5,6 @@
 :root {
     --c-dark: #212529;
     --c-brand: #0e96d5;
-    --c-brand-light: #53add7;
-    --c-body: #727272;
     --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
 }
@@ -26,9 +24,8 @@
 }
 
 /* SECCION HERO */
-
 #hero {
-    background: linear-gradient(rgba(33,37,41, 0.5), rgba(33,37,41, 0.5)), url(/src/img/hero.jpg);
+    background: linear-gradient(rgba(33,37,41, 0.7), rgba(33,37,41, 0.7)), url(/src/img/hero.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -39,7 +36,6 @@
 
 
 /* SECCIONES */
-
 .section-padding {
     padding-top: 140px;
     padding-bottom: 140px;
@@ -60,13 +56,6 @@
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.iconbox {
-    width: 70px;
-    height: 70px;
-    color: var(--c-brand);
-    font-size: 34px;
 }
 
 /* SECCION SERVICIOS*/
@@ -100,7 +89,6 @@
 }
 
 /* SECCION PRODUCTOS */
-
 .carousel img {
     width: 100%;
     height: 300px;
@@ -108,9 +96,16 @@
     object-position: center;
 }
 
-
+/* SECCION GALERIA */
 .col img {
     margin-top: 8px;
     vertical-align: middle;
     width: 100%;
+}
+
+
+#cotizador-encabezado{
+    background: linear-gradient(rgba(33,37,41, 0.7), rgba(33,37,41, 0.7)), url('https://reefairconditioning.com.au/wp-content/uploads/2021/03/Reef-Air-Conditioning-Services.jpg');
+    background-position: center;
+    background-size: contain;
 }
