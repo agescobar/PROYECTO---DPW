@@ -9,6 +9,12 @@ document.getElementById('formulario-cotizacion').addEventListener('submit', func
 function CalcularBTU(){
     let ancho_area = document.getElementById('ancho').value;
     let largo_area = document.getElementById('largo').value;
+
+    if (!ancho_area || !largo_area || isNaN(ancho_area) || isNaN(largo_area)) {
+        alert("Por favor, ingrese datos válidos.");
+        return;
+    }
+
     let resultado = parseFloat(ancho_area) * parseFloat(largo_area) * 600;
     let capacidad = 0;
     let marcas = " ";
@@ -60,6 +66,12 @@ function renderizarResultadoCapacidad(capacidad, marcas, voltaje){
 function CalcularPrecio(){
     let equipo = document.getElementById('equipo').value;
     let zona = document.getElementById('zona').value;
+
+    if (!equipo || !zona) {
+        alert("Por favor, ingresa los datos solicitados.");
+        return;
+    }
+
     let instalacion = 125;
     let total = parseFloat(equipo) + parseFloat(zona) + parseFloat(instalacion);
 

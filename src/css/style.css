@@ -103,8 +103,11 @@
 }
 
 
+/* PÁGINA COTIZADOR */
+
 #cotizador-encabezado{
     background: linear-gradient(rgba(33,37,41, 0.7), rgba(33,37,41, 0.7)), url('https://reefairconditioning.com.au/wp-content/uploads/2021/03/Reef-Air-Conditioning-Services.jpg');
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
