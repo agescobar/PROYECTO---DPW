@@ -51,7 +51,8 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- CALCULO DE CAPACIDAD -->
     <section class="container section-padding">
         <div class="row">
             <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
@@ -59,7 +60,43 @@
                     <h1 class="display-6 fw-semibold">Conoce la capacidad que necesitas</h1>
                     <div class="line"></div>
                     <p>
-                        ¿No sabes qué capacidad de aire acondicionado necesitas para tu habitación? Ingresa en el siguiente formulario las dimensiones de la habitación donde necesitas el equipo y obtén una estimación. <span>¡Asegúrate de elegir la solución perfecta con Enfriatech!</span>
+                        ¿No sabes qué capacidad de aire acondicionado necesitas para tu habitación? Ingresa en el siguiente formulario las dimensiones de la habitación donde necesitas el equipo y obtén una estimación. ¡Asegúrate de elegir la solución perfecta con Enfriatech!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-12">
+                <!--FORMULARIO DE CALCULO DE CAPACIDAD-->
+                <form id="formulario-capacidad">
+                    <div class="mb-3">
+                        <label for="ancho" class="form-label">Ingresa el ancho de la habitación (en metros cuadrados): </label>
+                        <input type="text" class="form-control" id="ancho">
+                    </div>
+                    <div class="mb-3">
+                        <label for="largo" class="form-label">Ingresa el largo de la habitación (metros cuadrados): </label>
+                        <input type="text" class="form-control" id="largo">
+                    </div>
+                    <button type="submit" class="btn btn-primary" onclick="CalcularBTU()">Calcular</button>
+                </form>
+            </div>
+            <div id="contenedor-form-capacidad" class="col-lg-6 col-md-12 product">
+                <!-- CONTENEDOR PARA LA CARD CON RESULTADO -->
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- CALCULO PRECIO EQUIPO + INSTALACIÓN MECÁNICA -->
+    <section class="container section-padding">
+        <div class="row">
+            <div class="col-12 text-center" data-aos="fade-down" data-aos-delay="50">
+                <div class="section-title">
+                    <h1 class="display-6 fw-semibold">Haz una cotización aproximada</h1>
+                    <div class="line"></div>
+                    <p>
+                        Utiliza nuestro formulario para calcular el precio estimado del suministro del equipo y la instalación mecánica. Ingresa los datos solicitados y obtén una cotización aproximada al instante. En Enfriatech, hacemos que mantener tu espacio frescso sea fácil y transparente.
                     </p>
                 </div>
             </div>
@@ -68,43 +105,51 @@
             <div class="d-flex justify-content-center align-items-center gap-4">
                 <div class="col-lg-6 col-md-12">
                     <!--FORMULARIO DE CALCULO DE CAPACIDAD-->
-                   <form id="formulario-capacidad">
+                   <form id="formulario-cotizacion">
                        <div class="mb-3">
-                           <label for="ancho" class="form-label">Ingresa el ancho de la habitación (en metros cuadrados): </label>
-                           <input type="text" class="form-control" id="ancho">
+                        <label for="largo" class="form-label">
+                            Selecciona el equipo: 
+                        </label>
+                        <select id="equipo" class="form-select">
+                            <option selected>Open this select menu</option>
+                            <option value="280">12,000 BTU CONVENCIONAL 220v (+$280)</option>
+                            <option value="395">12,000 BTU INVERTER 220v (+$395)</option>
+                            <option value="296">12,000 BTU CONVENCIONAL 110v (+$296) </option>
+                            <option value="400">12,000 BTU INVERTER 110v (+$400) </option>
+                            <option value="490">18,000 BTU CONVENCIONAL 220v (+$490)</option>
+                            <option value="550">18,000 BTU INVERTER 220v (+$550)</option>
+                            <option value="545">24,000 BTU CONVENCIONAL 220v (+$545)</option>
+                            <option value="650">24,000 BTU 220v INVERTER (+$650)</option>
+                        </select>
                        </div>
                        <div class="mb-3">
-                           <label for="largo" class="form-label">Ingresa el largo de la habitación (metros cuadrados): </label>
-                           <input type="text" class="form-control" id="largo">
+                        <label for="largo" class="form-label">
+                            Selecciona la zona donde se instalará: 
+                        </label>
+                        <select id="zona" class="form-select" placeholder="Selecciona la zona">
+                            <option value="15">Ahuachapán Norte</option>
+                            <option value="15">Ahuachapán Centro</option>
+                            <option value="15">Ahuachapán Sur</option>
+                            <option value="santa-ana-norte">Santa Ana Norte</option>
+                            <option value="0">Santa Ana Centro</option>
+                            <option value="10">Santa Ana Este</option>
+                            <option value="10">Santa Ana Oeste</option>
+                            <option value="15">Sonsonate Norte</option>
+                            <option value="20">Sonsonate Centro</option>
+                            <option value="20">Sonsonate Este</option>
+                            <option value="20">Sonsonate Oeste</option>
+                        </select>
                        </div>
-                       <button type="submit" class="btn btn-primary" onclick="return CalcularBTU()">Calcular</button>
+                       <button type="submit" class="btn btn-primary" onclick="return CalcularPrecio()">Calcular</button>
                    </form>
                </div>
-               <div id="contenedor-form-capacidad" class="col-lg-6 col-md-12">
-                   <!-- 
-                   <div class="col">
-                       <div class="card">
-                           <div class="card-body">
-                           <h5 class="card-title">BTUS</h5>
-                               <div class="d-flex flex-column">
-                                   <p class="card-text">
-                                       VOLTAJES
-                                   </p>
-                                   <p class="card-text">
-                                       MARCAS
-                                   </p>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-                   -->
+               <div id="contenedor-form-cotizacion" class="col-lg-6 col-md-12">
+                   <!-- CONTENEDOR PARA LA CARD CON RESULTADO -->
+                   
                </div>
             </div>
         </div>
     </section>
-
-
-
 
     <!-- FOOTER -->
     <footer class="footer">

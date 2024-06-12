@@ -5,7 +5,6 @@
 :root {
     --c-dark: #212529;
     --c-brand: #0e96d5;
-    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
     --transition: all 0.5s ease;
 }
 
@@ -31,7 +30,7 @@
 }
 
 #hero span{
-    text-decoration: underline #53add7;
+    text-decoration: underline var(--c-brand);
 }
 
 
@@ -62,7 +61,7 @@
 
 .service, .product{ /* Añade box shadow a las cards de servicios y productos */
     height: 100%;
-    box-shadow: 0px 15px 25px rgba(0,0,0,0.08);;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
 }
 
 .service::after {
